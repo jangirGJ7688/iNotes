@@ -3,21 +3,28 @@ iNotes is a simple and intuitive note-taking application developed for iOS devic
 **Features**
 
 **Create Notes:** Easily create new notes with a simple and user-friendly interface.
+
 **Edit Notes:** Modify existing notes and save changes.
+
 **Delete Notes:** Remove notes that are no longer needed.
+
 **Persistent Storage:** Notes are stored using CoreData, ensuring that your data is saved and retrievable even after the app is closed.
 
 **Technologies Used**
 
 Swift: The programming language used to develop the application.
+
 SwiftUI: A modern UI framework for building declarative interfaces across all Apple platforms.
+
 CoreData: A framework used for managing the model layer objects in the application. It provides powerful object graph management and persistence features.
 
 **Requirements**
 
 iOS 14.0+: The app is designed to run on iOS 14.0 or later.
+
 Xcode 12.0+: You need Xcode 12.0 or later to build and run the project.
-Installation
+
+**Installation**
 Clone the repository:
 
 bash
