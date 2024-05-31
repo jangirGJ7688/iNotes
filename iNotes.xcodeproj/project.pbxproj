@@ -64,8 +64,7 @@
 				B4DF881E2C09F43000C16184 /* Model */,
 				B4DF881C2C09F42000C16184 /* Views */,
 				B4DF881D2C09F42700C16184 /* ViewModel */,
-				B4DF88052C06C9DB00C16184 /* Assets.xcassets */,
-				B4DF880C2C06C9DB00C16184 /* iNotes.xcdatamodeld */,
+				B4DF881F2C0A1F0B00C16184 /* Resources */,
 				B4DF88072C06C9DB00C16184 /* Preview Content */,
 			);
 			path = iNotes;
@@ -102,8 +101,17 @@
 		B4DF881E2C09F43000C16184 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B4DF880C2C06C9DB00C16184 /* iNotes.xcdatamodeld */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B4DF881F2C0A1F0B00C16184 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B4DF88052C06C9DB00C16184 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

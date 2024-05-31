@@ -9,7 +9,7 @@ import CoreData
 
 class PersistenceController: ObservableObject {
     
-    let container: NSPersistentContainer
+    private let container: NSPersistentContainer
     
     @Published var noteItems: [NoteItem] = []
 
@@ -27,6 +27,7 @@ class PersistenceController: ObservableObject {
     
     private func fetchNotes() {
         let request = NSFetchRequest<NoteItem>(entityName: "NoteItem")
+        request.sortDescriptors = [NSSortDescriptor(key: "time", ascending: false)]
         do {
             self.noteItems = try container.viewContext.fetch(request)
         } catch let error {
@@ -34,7 +35,7 @@ class PersistenceController: ObservableObject {
         }
     }
     
-    func saveData() {
+    private func saveData() {
         do {
             try container.viewContext.save()
             fetchNotes()

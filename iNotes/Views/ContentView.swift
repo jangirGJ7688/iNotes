@@ -14,28 +14,36 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(vm.noteItems){ item in
-                    NavigationLink(destination: NoteItemDetailView(item: item, vm: vm)) {
-                        NoteCellView(item: item)
+            ZStack {
+                if vm.noteItems.isEmpty {
+                    VStack {
+                        Image("noimage")
+                            .resizable()
+                            .frame(width: 300,height: 400)
+                        Text("No Note to show")
+                            .font(.title)
                     }
-                    .listRowSeparator(.hidden)
+                }else {
+                    List {
+                        ForEach(vm.noteItems){ item in
+                            NavigationLink(destination: NoteItemDetailView(item: item, vm: vm)) {
+                                NoteCellView(item: item)
+                            }
+                            .listRowSeparator(.hidden)
+                        }
+                        .onDelete(perform: vm.deleteNote)
+                    }
+                    .listStyle(.insetGrouped)
+                    .listRowSpacing(10)
+                    .background(Color.gray.opacity(0.1))
                 }
-                .onDelete(perform: vm.deleteNote)
             }
-            .listStyle(.insetGrouped)
-            .listRowSpacing(10)
             .navigationBarItems(trailing: Button(action: {}, label: {
                 NavigationLink(destination: AddNoteView(vm: vm)) {
                     Text("Add Note")
                 }
             }))
             .navigationTitle("iNotes")
-            .background(Color.gray.opacity(0.1))
         }
     }
-}
-
-#Preview {
-    ContentView()
 }
