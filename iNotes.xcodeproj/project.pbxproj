@@ -13,6 +13,9 @@
 		B4DF88092C06C9DB00C16184 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4DF88082C06C9DB00C16184 /* Preview Assets.xcassets */; };
 		B4DF880B2C06C9DB00C16184 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DF880A2C06C9DB00C16184 /* Persistence.swift */; };
 		B4DF880E2C06C9DB00C16184 /* iNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4DF880C2C06C9DB00C16184 /* iNotes.xcdatamodeld */; };
+		B4DF88152C06CBAA00C16184 /* NoteItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DF88142C06CBAA00C16184 /* NoteItemDetailView.swift */; };
+		B4DF88172C06CCA400C16184 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DF88162C06CCA400C16184 /* AddNoteView.swift */; };
+		B4DF88192C07054200C16184 /* NoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DF88182C07054200C16184 /* NoteCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		B4DF88082C06C9DB00C16184 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B4DF880A2C06C9DB00C16184 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B4DF880D2C06C9DB00C16184 /* iNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iNotes.xcdatamodel; sourceTree = "<group>"; };
+		B4DF88142C06CBAA00C16184 /* NoteItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemDetailView.swift; sourceTree = "<group>"; };
+		B4DF88162C06CCA400C16184 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
+		B4DF88182C07054200C16184 /* NoteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +61,10 @@
 		B4DF88002C06C9DA00C16184 /* iNotes */ = {
 			isa = PBXGroup;
 			children = (
-				B4DF88012C06C9DA00C16184 /* iNotesApp.swift */,
-				B4DF88032C06C9DA00C16184 /* ContentView.swift */,
+				B4DF881E2C09F43000C16184 /* Model */,
+				B4DF881C2C09F42000C16184 /* Views */,
+				B4DF881D2C09F42700C16184 /* ViewModel */,
 				B4DF88052C06C9DB00C16184 /* Assets.xcassets */,
-				B4DF880A2C06C9DB00C16184 /* Persistence.swift */,
 				B4DF880C2C06C9DB00C16184 /* iNotes.xcdatamodeld */,
 				B4DF88072C06C9DB00C16184 /* Preview Content */,
 			);
@@ -71,6 +77,33 @@
 				B4DF88082C06C9DB00C16184 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B4DF881C2C09F42000C16184 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4DF88012C06C9DA00C16184 /* iNotesApp.swift */,
+				B4DF88032C06C9DA00C16184 /* ContentView.swift */,
+				B4DF88142C06CBAA00C16184 /* NoteItemDetailView.swift */,
+				B4DF88162C06CCA400C16184 /* AddNoteView.swift */,
+				B4DF88182C07054200C16184 /* NoteCellView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B4DF881D2C09F42700C16184 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B4DF880A2C06C9DB00C16184 /* Persistence.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B4DF881E2C09F43000C16184 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4DF88172C06CCA400C16184 /* AddNoteView.swift in Sources */,
 				B4DF880B2C06C9DB00C16184 /* Persistence.swift in Sources */,
 				B4DF880E2C06C9DB00C16184 /* iNotes.xcdatamodeld in Sources */,
 				B4DF88042C06C9DA00C16184 /* ContentView.swift in Sources */,
 				B4DF88022C06C9DA00C16184 /* iNotesApp.swift in Sources */,
+				B4DF88192C07054200C16184 /* NoteCellView.swift in Sources */,
+				B4DF88152C06CBAA00C16184 /* NoteItemDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
