@@ -11,7 +11,8 @@ import CoreData
 struct ContentView: View {
     
     @StateObject var vm = PersistenceController()
-
+    @State var query: String = ""
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -24,18 +25,21 @@ struct ContentView: View {
                             .font(.title)
                     }
                 }else {
-                    List {
-                        ForEach(vm.noteItems){ item in
-                            NavigationLink(destination: NoteItemDetailView(item: item, vm: vm)) {
-                                NoteCellView(item: item)
+                    VStack {
+                        List {
+                            ForEach(query.isEmpty ? vm.noteItems : vm.noteItems.filter { $0.title!.contains(query)}){ item in
+                                NavigationLink(destination: NoteItemDetailView(item: item, vm: vm)) {
+                                    NoteCellView(item: item)
+                                }
+                                .listRowSeparator(.hidden)
                             }
-                            .listRowSeparator(.hidden)
+                            .onDelete(perform: vm.deleteNote)
                         }
-                        .onDelete(perform: vm.deleteNote)
+                        .listStyle(.insetGrouped)
+                        .listRowSpacing(10)
                     }
-                    .listStyle(.insetGrouped)
-                    .listRowSpacing(10)
                     .background(Color.gray.opacity(0.1))
+                    .searchable(text: $query)
                 }
             }
             .navigationBarItems(trailing: Button(action: {}, label: {
@@ -46,4 +50,8 @@ struct ContentView: View {
             .navigationTitle("iNotes")
         }
     }
+}
+
+#Preview {
+    ContentView()
 }
